@@ -14,23 +14,19 @@ radio.setGroup(10)
 basic.forever(function () {
     if (COUNT == 1 && UPDOWN == 0) {
         pins.analogWritePin(AnalogPin.P13, 0)
-        pins.analogWritePin(AnalogPin.P12, 900)
-        basic.pause(6800)
+        pins.analogWritePin(AnalogPin.P12, 840)
+        basic.pause(4800)
         pins.analogWritePin(AnalogPin.P13, 0)
         pins.analogWritePin(AnalogPin.P12, 0)
         UPDOWN = 1
     } else if (COUNT == 0 && UPDOWN == 1) {
         pins.analogWritePin(AnalogPin.P12, 0)
-        pins.analogWritePin(AnalogPin.P13, 900)
-        basic.pause(6800)
+        pins.analogWritePin(AnalogPin.P13, 750)
+        basic.pause(4300)
         pins.analogWritePin(AnalogPin.P12, 0)
         pins.analogWritePin(AnalogPin.P13, 0)
         UPDOWN = 0
     }
-})
-basic.forever(function () {
-    TM1650.on()
-    TM1650.showNumber(ModuleWorld_Analog.Light(ModuleWorld_Analog.mwAnalogNum.AP2P3))
 })
 basic.forever(function () {
     if (ModuleWorld_Analog.Light(ModuleWorld_Analog.mwAnalogNum.AP2P3) > 980) {
