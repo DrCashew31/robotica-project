@@ -13,15 +13,15 @@ COUNT = 0
 radio.setGroup(10)
 basic.forever(function () {
     if (COUNT == 1 && UPDOWN == 0) {
-        pins.analogWritePin(AnalogPin.P13, 0)
-        pins.analogWritePin(AnalogPin.P12, 840)
+        pins.analogWritePin(AnalogPin.P12, 0)
+        pins.analogWritePin(AnalogPin.P13, 840)
         basic.pause(4800)
         pins.analogWritePin(AnalogPin.P13, 0)
         pins.analogWritePin(AnalogPin.P12, 0)
         UPDOWN = 1
     } else if (COUNT == 0 && UPDOWN == 1) {
-        pins.analogWritePin(AnalogPin.P12, 0)
-        pins.analogWritePin(AnalogPin.P13, 750)
+        pins.analogWritePin(AnalogPin.P13, 0)
+        pins.analogWritePin(AnalogPin.P12, 750)
         basic.pause(4300)
         pins.analogWritePin(AnalogPin.P12, 0)
         pins.analogWritePin(AnalogPin.P13, 0)
